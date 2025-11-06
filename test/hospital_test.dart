@@ -16,23 +16,23 @@ void main() {
       service = HospitalService();
       auth = AuthService(service);
       doctor = Doctor(
-          'D001', 'Dr. Nita', 'nita@gmail.com', 'nita1234', 'Cardiology');
+          'D004', 'Dr. Lily Yi', 'lily@hospital.com', 'lily1234', 'Cardiology');
       patient =
-          Patient('P001', 'Liza', 'liza@gmail.com', 'liza1234', 30, '123456');
+          Patient('P004', 'Riya Lee', 'riya@gmail.com', 'riya1234', 30, '123456');
       service.addDoctor(doctor);
       service.addPatient(patient);
     });
 
     test('valid doctor login returns Doctor instance', () {
-      final user = auth.login('nita@gmail.com', 'nita1234');
+      final user = auth.login('lily@hospital.com', 'lily1234');
       expect(user, isA<Doctor>());
-      expect((user as Doctor).name, equals('Dr. Nita'));
+      expect((user as Doctor).name, equals('Dr. Lily Yi'));
     });
 
     test('valid patient login returns Patient instance', () {
-      final user = auth.login('liza@gmail.com', 'liza1234');
+      final user = auth.login('riya@gmail.com', 'riya1234');
       expect(user, isA<Patient>());
-      expect((user as Patient).name, equals('Liza'));
+      expect((user as Patient).name, equals('Riya Lee'));
     });
 
     test('invalid login returns null', () {
@@ -49,29 +49,29 @@ void main() {
     setUp(() {
       service = HospitalService();
       doctor = Doctor(
-          'D001', 'Dr. Nita', 'nita@gmail.com', 'nita1234', 'Cardiology');
+          'D005', 'Dr. Lola Nan', 'lola@hospital.com', 'lola1234', 'Cardiology');
       patient =
-          Patient('P001', 'Liza', 'liza@gmail.com', 'liza1234', 30, '123456');
+          Patient('P005', 'Vandy Young', 'vandy@gmail.com', 'vandy1234', 30, '123456');
       service.addDoctor(doctor);
       service.addPatient(patient);
     });
 
     test('add doctor with unique ID', () {
       final newDoctor = Doctor(
-          'D002', 'Dr. Nika', 'nika@gmail.com', 'nika1234', 'Cardiology');
+          'D008', 'Dr. Nika Tang', 'nika@hospital.com', 'nika1234', 'Cardiology');
       service.addDoctor(newDoctor);
       expect(service.doctors.any((d) => d.id == 'D002'), isTrue);
     });
 
     test('add patient with unique ID', () {
       final newPatient =
-          Patient('P002', 'Mey', 'mey@gmail.com', 'mey1234', 20, '123456');
+          Patient('P008', 'Mey Siv', 'mey@gmail.com', 'mey1234', 20, '123456');
       service.addPatient(newPatient);
       expect(service.patients.any((p) => p.id == 'P002'), isTrue);
     });
 
     test('schedule valid appointment', () {
-      final date = DateTime.now().add(Duration(days: 1, hours: 10));
+      final date = DateTime.now().add(Duration(days: 1, hours: 11));
       service.scheduleAppointment(
         id: 'A007',
         patient: patient,
@@ -100,7 +100,7 @@ void main() {
     test('reject duplicate appointment ID', () {
       final date = DateTime.now().add(Duration(days: 1));
       service.scheduleAppointment(
-        id: 'A006',
+        id: 'A008',
         patient: patient,
         doctor: doctor,
         date: date,
@@ -108,7 +108,7 @@ void main() {
       );
       expect(
         () => service.scheduleAppointment(
-          id: 'A006',
+          id: 'A008',
           patient: patient,
           doctor: doctor,
           date: date.add(Duration(hours: 1)),
@@ -121,30 +121,30 @@ void main() {
     test('cancel appointment', () {
       final date = DateTime.now().add(Duration(days: 1));
       service.scheduleAppointment(
-        id: 'A008',
+        id: 'A009',
         patient: patient,
         doctor: doctor,
         date: date,
         reason: 'Cancel test',
       );
-      service.cancelAppointment('A008');
+      service.cancelAppointment('A009');
       final appt =
-          service.appointments.firstWhere((a) => a.id == 'A008');
+          service.appointments.firstWhere((a) => a.id == 'A009');
       expect(appt.status, equals(AppointmentStatus.CANCELED));
     });
 
     test('complete appointment', () {
       final date = DateTime.now().add(Duration(days: 1));
       service.scheduleAppointment(
-        id: 'A005',
+        id: 'A010',
         patient: patient,
         doctor: doctor,
         date: date,
         reason: 'Complete test',
       );
-      service.completAppointment('A005', doctor, 'all good');
+      service.completAppointment('A010', doctor, 'all good');
       final appt =
-          service.appointments.firstWhere((a) => a.id == 'A005');
+          service.appointments.firstWhere((a) => a.id == 'A010');
       expect(appt.status, equals(AppointmentStatus.COMPLETED));
       expect(appt.note, equals('all good'));
     });
@@ -157,9 +157,9 @@ void main() {
 
     setUp(() {
       doctor = Doctor(
-          'D001', 'Dr. Nita', 'nita@gmail.com', 'nita1234', 'Cardiology');
+          'D006', 'Dr. Mona Him', 'mona@hospital.com', 'mona1234', 'Cardiology');
       patient =
-          Patient('P001', 'Liza', 'liza@gmail.com', 'liza1234', 30, '123456');
+          Patient('P006', 'Vann Yee', 'vann@gmail.com', 'vann1234', 30, '123456');
       appointment = Appointment(
           id: 'A001',
           patient: patient,
@@ -199,9 +199,9 @@ void main() {
 
     setUp(() {
       doctor = Doctor(
-          'D001', 'Dr. Nita', 'nita@gmail.com', 'nita1234', 'Cardiology');
+          'D007', 'Dr. Emma Bee', 'emma@hospital.com', 'emma1234', 'Cardiology');
       patient =
-          Patient('P001', 'Liza', 'liza@gmail.com', 'liza1234', 30, '123456');
+          Patient('P007', 'Linna Kong', 'linna@gmail.com', 'linna1234', 30, '123456');
       appointment = Appointment(
           id: 'A001',
           patient: patient,

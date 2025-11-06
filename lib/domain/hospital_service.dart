@@ -118,8 +118,7 @@ class HospitalService {
     );
 
     if (appt.doctor.id != doctor.id) {
-      print("You can only complete appointments assigned to you.");
-      return;
+      throw Exception('You can only complete appointments assigned to you.');
     }
 
     if (appt.status != AppointmentStatus.SCHEDULED) {
