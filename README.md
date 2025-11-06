@@ -1,4 +1,4 @@
-# 🏥 Hospital Management System (Dart Console App)
+# 🏥 Hospital Management System - Managing Doctor and Patient Appointment
 
 A console-based hospital management system built in **Dart**, designed to demonstrate clean backend architecture, type safety, and maintainable code practices.  
 It supports multiple actors (**Receptionist, Doctor, Patient**) and provides flows for appointment scheduling, cancellation, and history management.
