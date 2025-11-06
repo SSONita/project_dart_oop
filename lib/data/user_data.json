@@ -1,0 +1,60 @@
+[
+  {
+    "id": "D001",
+    "name": "Dr. Alice Smith",
+    "email": "alice.smith@hospital.com",
+    "password": "secure123",
+    "role": "Doctor",
+    "specialization": "Cardiology"
+  },
+  {
+    "id": "P001",
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "password": "patientpass",
+    "role": "Patient",
+    "age": 45,
+    "phone": "555-1234"
+  },
+  {
+    "id": "R001",
+    "name": "Sovanliza",
+    "email": "liza@hospital.com",
+    "password": "liza1234",
+    "role": "Receptionist"
+  },
+  {
+    "id": "D002",
+    "name": "Dr. Sovannita Sar",
+    "email": "nita@hospital.com",
+    "password": "nita1234",
+    "role": "Doctor",
+    "specialization": "Neurologist"
+  },
+  {
+    "id": "P002",
+    "name": "Emma Doe",
+    "email": "emma@gmail.com",
+    "password": "emma1234",
+    "role": "Patient",
+    "age": 18,
+    "phone": "0123456789"
+  },
+  {
+    "id": "D003",
+    "name": "Jing Mey",
+    "email": "mey@hospital.com",
+    "password": "mey1234",
+    "role": "Doctor",
+    "specialization": "Surgery"
+  },
+  {
+    "id": "P003",
+    "name": "Linda You",
+    "email": "linda@gmail.com",
+    "password": "linda1234",
+    "role": "Patient",
+    "age": 28,
+    "phone": "09876543"
+  }
+]

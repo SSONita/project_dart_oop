@@ -1,0 +1,7 @@
+name: hospital_management_system
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dev_dependencies:
+  test: ^1.25.0
