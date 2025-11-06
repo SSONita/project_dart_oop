@@ -40,7 +40,7 @@ It supports multiple actors (**Receptionist, Doctor, Patient**) and provides flo
 - **Console Layer**  
   - `HospitalConsole`: interactive menus for Receptionist, Doctor, and Patient.
 
-- **Persistence**  
+- **Data Layer**  
   - JSON repositories for saving doctors, patients, and appointments.
 
 ---
